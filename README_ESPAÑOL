@@ -1,0 +1,21 @@
+Cuando me cambie a linux (fedora 42 por cierto) note que la activacion de los leds de mi teclado generico dejo de funcionar.
+
+De manera que la tecla que normalmente encendia los leds del teclado, ya no hacia nada, asi que decidi intentar hacer un driver para que funcionara, lo cual era una idea erronea ya que no era necesario hacer un driver entero realmente, solo un script que enviara las instrucciones correctas cuando la tecla correspodiente se presionara, asi que eso hice (con un poco de ayuda de claude para enviar las instrucciones).
+
+## Scripts
+
+- **main.py**  
+  Fue usado para encontrar las instrucciones correctas que encendieran los leds.
+
+- **index.py**  
+  Es el script usado para encender los leds presionando la tecla.
+
+## Ejecución
+
+El comando:
+
+```bash
+nohup python3 index.py > log.txt 2>&1 &
+```
+
+Lo uso para correr el script en segundo plano sin la necesidad de tener abierta la terminal o el editor de codigo.
